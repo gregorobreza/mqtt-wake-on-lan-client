@@ -1,8 +1,7 @@
 import time
-from mqtt_client import PowerOn
 import yaml
 
-from send_on_off_command import SendOnOff
+from src.send_on_off_command import SendOnOff
 
 
 def main():
