@@ -1,0 +1,16 @@
+devices:
+  - mac: "aa.bb.cc.dd.ee.12"
+    ip: "124.145.14.47"
+    name: "main"
+  - mac: "aa.bb.cc.dd.ee.12"
+    ip: "124.145.14.479"
+    name: "main"
+  - mac: "aa.bb.cc.dd.ee.12"
+    ip: "124.145.14.47"
+    name: "workstation"
+lan_interface: "255.255.255.255"
+mqtt_broker_url: "homeassistant.local"
+port: 1883
+mqtt_user: "user"
+mqtt_password: "password
+topic: "test"
