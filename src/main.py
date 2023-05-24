@@ -1,11 +1,11 @@
 import time
 import yaml
 
-from src.send_on_off_command import SendOnOff
+from send_on_off_command import SendOnOff
 
 
 def main():
-    with open("config.yaml", mode="rt", encoding="utf-8") as file:
+    with open("../config.yaml", mode="rt", encoding="utf-8") as file:
         # print(yaml.safe_load(file))
         config = yaml.safe_load(file)
     print(config)
