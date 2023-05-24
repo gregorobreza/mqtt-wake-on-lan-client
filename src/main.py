@@ -20,7 +20,6 @@ def main():
         config["mqtt_user"],
         config["mqtt_password"],
     )
-    # neki = PowerOn()
     bla = neki.run()
 
 

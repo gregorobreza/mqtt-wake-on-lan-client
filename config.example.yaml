@@ -12,5 +12,5 @@ lan_interface: "255.255.255.255"
 mqtt_broker_url: "homeassistant.local"
 port: 1883
 mqtt_user: "user"
-mqtt_password: "password
+mqtt_password: "password"
 topic: "test"

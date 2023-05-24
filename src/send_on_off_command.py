@@ -20,7 +20,6 @@ class SendOnOff(PowerOn):
                 for device in message[var_name]:
                     self.wake_up_device(device)
 
-
     def wake_up_all_devices(self):
         send_magic_packet(
             *[device["mac"] for device in self.devices], interface=self.interface
