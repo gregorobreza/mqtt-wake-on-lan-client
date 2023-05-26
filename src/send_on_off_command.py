@@ -10,7 +10,7 @@ class SendOnOff(PowerOn):
     def on_message(self, mqttc, obj, msg):
         print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
         var_name = "devices"
-        if msg.topic == "home/rpi2/wakeonlan":
+        if msg.topic == self.wake_topic:
             message = json.loads(msg.payload)
             if message[var_name] == "all":
                 self.wake_up_all_devices()

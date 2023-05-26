@@ -10,7 +10,9 @@ class PowerOn(mqtt.Client):
         port: int,
         mqtt_user: str,
         mqtt_password: str,
-        topic: str,
+        subscribe_topic: str,
+        wake_topic: str,
+        command_topic: str,
         username: str,
         password: str,
         *args,
@@ -23,7 +25,9 @@ class PowerOn(mqtt.Client):
         self.port = port
         self.mqtt_user = mqtt_user
         self.mqtt_password = mqtt_password
-        self.topic = topic
+        self.subscribe_topic = subscribe_topic
+        self.wake_topic = wake_topic
+        self.command_topic = command_topic
         self._username = username
         self._password = password
 
@@ -32,9 +36,6 @@ class PowerOn(mqtt.Client):
 
     def on_connect_fail(self, mqttc, obj):
         print("Connect failed")
-
-    # def on_message(self, mqttc, obj, msg):
-    #     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
 
     def on_publish(self, mqttc, obj, mid):
         print("mid: " + str(mid))
@@ -49,5 +50,5 @@ class PowerOn(mqtt.Client):
         # self.connect("mqtt.eclipseprojects.io", 1883, 60)
         self.connect(self.mqtt_broker_url, self.port, 60)
         # self.subscribe("$SYS/#", 0)
-        self.subscribe(self.topic, 0)
+        self.subscribe(self.subscribe_topic, 0)
         self.loop_forever()

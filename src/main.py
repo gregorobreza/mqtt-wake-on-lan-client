@@ -16,7 +16,9 @@ def main():
         config["port"],
         config["mqtt_user"],
         config["mqtt_password"],
-        config["topic"],
+        config["subscribe_topic"],
+        config["wake_topic"],
+        config["command_topic"],
         config["mqtt_user"],
         config["mqtt_password"],
     )
