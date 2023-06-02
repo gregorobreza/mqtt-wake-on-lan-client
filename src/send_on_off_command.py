@@ -8,7 +8,7 @@ class SendOnOff(PowerOn):
         super(SendOnOff, self).__init__(*args, **kwargs)
 
     def on_message(self, mqttc, obj, msg):
-        print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
+        print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload), flush=True)
         var_name = "devices"
         if msg.topic == self.wake_topic:
             message = json.loads(msg.payload)
